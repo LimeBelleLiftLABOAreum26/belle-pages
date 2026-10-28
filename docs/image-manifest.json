@@ -1,0 +1,56 @@
+{
+  "source": "Belle-preview (4).html",
+  "method": "埋め込みbase64を直接デコード。加工・圧縮・再保存なし。",
+  "images": [
+    {
+      "file": "assets/images/01-hero.png",
+      "bytes": 2821721,
+      "sha256": "1be43b7823d9070ea8d3d40c81f17b38a82750955abe58042c0ed4bf80a30215"
+    },
+    {
+      "file": "assets/images/02-offer.png",
+      "bytes": 1953793,
+      "sha256": "5bc7e9354ff46cb22722038bfc1d2ff6c4881c6e0462fecc4490a0fb1c84662c"
+    },
+    {
+      "file": "assets/images/03-concerns.jpg",
+      "bytes": 58580,
+      "sha256": "8e8e0eed571fb1399b230a6d23484d6263636321d424452706e1e2ca4beac65c"
+    },
+    {
+      "file": "assets/images/04-about-peeling.png",
+      "bytes": 2046683,
+      "sha256": "f2ef745687d68e19e83ab9e7903999dfa58cfac848cde84618819ffe0b970054"
+    },
+    {
+      "file": "assets/images/05-cases.jpg",
+      "bytes": 102691,
+      "sha256": "6a5366839f6b4345167c3c2acf82e97b481c5ffdef89934e287dc2be9074fd66"
+    },
+    {
+      "file": "assets/images/06-needle.jpg",
+      "bytes": 283092,
+      "sha256": "16210dce5bcbc0c8081afa1612745a9f2edc7acc4dfa14ece21c713b40ec44e5"
+    },
+    {
+      "file": "assets/images/07-comparison.png",
+      "bytes": 1778664,
+      "sha256": "b05af36dc8c654eea8e77ace66a1302d454919dd30f0adf1442d89a3c06f9d1f"
+    },
+    {
+      "file": "assets/images/08-reasons.png",
+      "bytes": 1937011,
+      "sha256": "12fb003cc24e175e68f606de16977b3606a80824095bcbadbb7c1c8c384e044f"
+    },
+    {
+      "file": "assets/images/09-flow.jpg",
+      "bytes": 57383,
+      "sha256": "16ad0b821ef7fcc10340c44acfe19ce6dfc5c3a1ca45ab2a11af5b15b0558968"
+    },
+    {
+      "file": "assets/images/10-reviews.png",
+      "bytes": 2244993,
+      "sha256": "10fd876527f23c47ea8f1ee0f5c85f21c240216d5d1304c6c6f774f5313ea55f"
+    }
+  ]
+}

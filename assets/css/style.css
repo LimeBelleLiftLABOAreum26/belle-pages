@@ -1,0 +1,35 @@
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:#eef7f7;color:#314c50;font-family:"Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif}
+main{max-width:570px;margin:auto;background:white;box-shadow:0 0 40px #163e4612}
+img{display:block;width:100%;height:auto}
+ .preview{max-width:570px;margin:auto;padding:10px 16px;background:#284e54;color:white;font-size:12px;line-height:1.7}
+.offer{padding:20px 20px 0;background:#93d8dc}
+.cta{padding:20px 26px 25px;background:#f1fbf9}
+.button{display:block;border-radius:50px;background:#39b653;padding:18px 12px;text-align:center;color:white;text-decoration:none;font-size:19px;font-weight:bold;box-shadow:0 4px 0 #27823b}
+.phone{display:block;text-align:center;margin-top:18px;color:#35646b;font-size:17px;font-weight:bold;text-decoration:none}
+h2{font-family:serif;text-align:center;font-size:28px;margin:0 0 28px}
+section{padding:40px 25px}
+ .faq{background:#eaf8f5}
+details{background:white;margin:12px 0;padding:18px;line-height:1.9}
+summary{cursor:pointer;font-weight:bold}
+details p{font-size:14px}
+#salon{background:#f6feff}
+h3{border-left:4px solid #4cacb9;padding:12px;background:#e8ffe7}
+table{width:100%;border-collapse:collapse;font-size:15px}
+th,td{padding:20px 8px;border-bottom:1px solid #ddd;text-align:left}
+th{width:30%;color:#4cacb9}
+td a{color:#315e66}
+.pending{font-size:12px;line-height:1.8;color:#657b80;margin:22px 0}
+footer{text-align:center;padding:28px;font-size:12px;background:#e9f6f5}
+
+/* 元の配色・幅・画像比率を維持し、小さい画面でのはみ出しを防ぐ */
+[hidden]{display:none!important}
+.access{text-align:center;margin:18px 0;font-weight:bold;color:#4cacb9}
+.map{border:0;width:100%;display:block;border-radius:8px}
+.salon-cta{margin-top:25px}
+td{overflow-wrap:anywhere}td p{margin:0}
+:focus-visible{outline:3px solid #284e54;outline-offset:4px}
+.status{max-width:570px;margin:24px auto;padding:20px;line-height:1.8}
+@media(max-width:360px){section{padding:32px 16px}th,td{padding:16px 6px}.button{font-size:17px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
