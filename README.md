@@ -1,128 +1,81 @@
-# Belle 店舗ページ
+# Belle 店舗ページの管理
 
-「Belle-preview (4).html」をGitHub Pagesで公開するために整理したファイルです。特別な作成ソフトや変換作業は不要です。
+**担当者はHTMLやコードを編集しません。下の「店舗情報の入力画面」を開いてください。**
 
-## 最初に知っておくこと
+| 店舗 | 店舗情報の入力画面 | お客様向けページ |
+| --- | --- | --- |
+| Belle栄店 | [栄店の入力画面](https://limebelleliftlaboareum26.github.io/belle-pages/editor/?store=sakae) | [栄店ページ](https://limebelleliftlaboareum26.github.io/belle-pages/?store=sakae)（初期状態は未公開） |
+| Belle志木店 | [志木店の入力画面](https://limebelleliftlaboareum26.github.io/belle-pages/editor/?store=shiki) | [志木店ページ](https://limebelleliftlaboareum26.github.io/belle-pages/) |
 
-- 最初に開くページはBelle志木店です。
-- 画像10枚は、いただいたHTMLに入っていたデータをそのまま取り出しました。切り抜き・再生成・画質変更はしていません。
-- 配色・ページ幅・画像順・FAQ本文・予約先・電話番号・地図は元のページを引き継いでいます。定休日の行を追加し、小さい画面で文字がはみ出しにくくしています。
-- 元HTMLに定休日の記載がないため「店舗へお問い合わせください」としています。判明したら設定を書き換えてください。
-- 店舗情報はJavaScriptで反映します。ブラウザでJavaScriptを無効にしている場合は案内が表示されます。
+## 店舗の担当者がすること
 
-## ファイルの役割
+1. 担当する店舗の「入力画面」を開きます。
+2. 店舗名・住所・アクセス・営業時間・定休日・電話番号・予約先・地図を入力します。画像は変更しません。
+3. 公開する場合は、公開状態で「この店舗のページを公開する」を選びます。
+4. 「入力した内容を確認する」を押し、下に出るページで住所・予約先・電話番号・地図を確かめます。
+5. 「保存用ファイルをダウンロード」を押します。ファイルの中身を開く必要はありません。
+6. 表示される「GitHubの登録画面を開く」を押し、ダウンロードしたファイルを枠にドラッグします。
+7. 下の「Commit changes」を押して保存します。確認画面が出たらもう一度「Commit changes」を押します。
+8. 数分待ち、「店舗の公開ページを開く」で反映を確認します。
 
-| ファイル・フォルダ | 役割 |
+ダウンロードしただけでは公開されません。GitHubへの登録まで行ってください。入力内容は画面を閉じると消えるので、作業後はファイルを保存してください。
+
+保存ファイルは、栄店なら `sakae.json`、志木店なら `shiki.json` です。ダウンロード先に同じ名前のファイルがあると `sakae (1).json` などに変わる場合があります。GitHubに登録する前に必ず `sakae.json` に戻してください。
+
+[担当者向けの詳しい操作ガイド](https://limebelleliftlaboareum26.github.io/belle-pages/docs/staff-guide.html)
+
+## 栄店の方に引き継ぐには
+
+管理者が最初に行います。
+
+1. 担当者に、その方自身のGitHubアカウントを用意してもらいます。管理者のパスワードを渡す必要はありません。
+2. この保管場所の「Settings」→「Collaborators」→「Add people」から担当者を招待します。
+3. 担当者に招待を承認してもらいます。
+4. 栄店の入力画面と上の操作ガイドのリンクを渡します。
+
+注意：個人アカウントのこの保管場所では、編集権限は店舗ごとに制限されません。担当者は技術的には他のファイルも編集できます。店舗の情報ファイルは分けているため、通常の入力画面で栄店を更新しても志木店の情報は上書きされません。栄店以外への編集権限自体を与えたくない場合は、栄店用の保管場所を別に用意してから招待してください。
+
+## 初期状態について
+
+- 志木店は公開済み。住所・予約先・電話番号・地図と画像10枚は元のHTMLを引き継いでいます。
+- 志木店の定休日は元の資料にないため「店舗へお問い合わせください」です。
+- 栄店は店舗名と予約ボタンの文章だけ入れた下書きです。住所・電話番号・予約先などを推測して公開していません。担当者がすべて入力してから公開します。
+- 画像・デザイン・FAQは共通です。画像内に印刷された料金や文章は、店舗情報の入力画面では変わりません。
+- 入力画面は公開されたページですが、GitHubへ登録できるのは権限を持つ人です。この画面に入力した内容が自動で公開されることはありません。
+
+## 他の店舗を追加する（最初だけ管理者が行います）
+
+1. `config/stores/new-store.json` の内容を、新しい店舗用のファイルにコピーします。たとえば大宮店は `config/stores/omiya.json` とします。
+2. 店舗名と予約ボタンの文章を変更し、最初は `enabled` を `false` にして保存します。
+3. `https://limebelleliftlaboareum26.github.io/belle-pages/editor/?store=omiya` を開きます。
+4. あとの情報入力・確認・登録は、担当者が上記と同じ方法で行えます。
+5. 公開先は `https://limebelleliftlaboareum26.github.io/belle-pages/?store=omiya` です。
+
+店舗の短い名前には半角英小文字・数字・ハイフンを使います。既存店と同じ名前にしないでください。この初回準備も、必要であればCodexに依頼できます。
+
+## 管理者向け：ファイルの役割
+
+| ファイル | 内容 |
 | --- | --- |
-| `index.html` | ページの並び、FAQの文章 |
-| `config/stores.js` | 店舗情報。普段変更するのはここです |
-| `assets/css/style.css` | 色・文字の大きさ・余白 |
-| `assets/js/site.js` | 店舗情報をページへ反映する処理 |
-| `assets/images/` | 元HTMLから取り出した画像10枚 |
-| `docs/image-manifest.json` | 画像のサイズと、同じデータか確認するための記録 |
-| `.nojekyll` | GitHubでファイルをそのまま公開するための目印 |
+| `index.html` | ページの並び・FAQ |
+| `config/stores/shiki.json` | 志木店の情報だけを保存 |
+| `config/stores/sakae.json` | 栄店の情報だけを保存 |
+| `config/stores/new-store.json` | 新店舗用の下書きひな形 |
+| `editor/` | 日本語の店舗情報入力画面 |
+| `assets/css/style.css` | お客様向けページの色・文字・余白 |
+| `assets/js/` | 店舗情報を読み込む処理 |
+| `assets/images/` | 元のHTMLから無加工で取り出した画像10枚 |
 
-## 店舗情報を変更する
+2026年10月29日から、店舗情報の保存先を店舗ごとのファイルに変更しました。以前の `config/stores.js` は使いません。古い保存ファイルをアップロードせず、各店舗の入力画面から作成してください。
 
-1. GitHubで、このページを保存したリポジトリ（ファイルの保管場所）を開きます。
-2. `config` → `stores.js` を開き、鉛筆の「Edit this file」を押します。
-3. `shiki` の中で、変更したい項目の引用符 `" "` の内側だけを書き換えます。
-4. 「Commit changes」を押して保存します。公開ページへの反映には数分かかる場合があります。
+## 困ったとき
 
-| 項目 | 内容 |
-| --- | --- |
-| `enabled` | `true` なら公開、`false` なら非公開 |
-| `name` | 店舗名 |
-| `bookingLabel` | 予約ボタンに表示する文章 |
-| `address` | 住所。1行ごとに引用符で囲み、改行する部分はカンマで区切る |
-| `access` | 駅からの行き方 |
-| `hours` | 営業時間 |
-| `closedDays` | 定休日 |
-| `bookingUrl` | 予約ページのURL |
-| `mapEmbedUrl` | Googleマップをページに表示するためのURL |
-| `phone` | 電話番号。ハイフン付きで入力できます |
+- 登録できない：GitHubへのログインと、招待の承認を確認してください。
+- 「まだ公開されていません」と出る：入力画面の公開状態と、GitHubへの登録が終わっているか確認してください。
+- 更新されない：数分待って再読み込み。ファイル名が `sakae (1).json` になっていないかも確認してください。
+- 地図の入力エラー：Googleマップの「共有」→「地図を埋め込む」→「HTMLをコピー」を使ってください。「リンクを送信」は使いません。
+- 入力中に別の人が同じ店舗を更新した：画面を開き直して、最新の内容からやり直してください。
 
-予約ボタン4か所、電話ボタン4か所、表の電話番号、ページ上部・店舗案内・ブラウザのタイトル・地図が、この設定から反映されます。HTMLの各所を書き換える必要はありません。
+公開設定は「Settings」→「Pages」の `main` / `/(root)` です。通常の店舗情報の更新で、この設定を変える必要はありません。
 
-引用符・カンマ・かっこは消さないでください。設定が未完了の場合は店舗ページを出さず、案内文を表示します。入力ミスで前の店舗へ予約されるのを防ぐためです。
-
-### 地図のURLの取り方
-
-Googleマップで正しい店舗を開き、「共有」→「地図を埋め込む」→「HTMLをコピー」を選びます。コピーした文章の `src="https://www.google.com/maps/embed?..."` のうち、引用符の内側にあるURLだけを `mapEmbedUrl` に貼り付けます。「リンクを送信」の短いURLは使えません。
-
-## 他店舗を追加する
-
-志木店を残したまま、同じデザインで店舗を追加できます。
-
-1. `config/stores.js` を開きます。
-2. ファイル後半の `"new-store": { ... }` が新店舗用のひな形です。最初は `enabled: false` なので公開されません。
-3. `"new-store"` を、たとえば `"omiya"` に変更します。半角英小文字・数字・ハイフンを使い、他店と同じ名前にしないでください。
-4. その中の店舗名・住所・アクセス・営業時間・定休日・予約URL・地図URL・電話番号・ボタンの文章をすべて入力します。
-5. 入力を確かめてから `"enabled": true` に変更して保存します。
-6. 志木店の公開URL末尾に `?store=omiya` を付けて開きます。
-
-例（Ownerが `LimeBelleLiftLABOAreum26`、リポジトリが `belle-pages` の場合）：
-
-- 志木店：`https://limebelleliftlaboareum26.github.io/belle-pages/`
-- 志木店を明示：`https://limebelleliftlaboareum26.github.io/belle-pages/?store=shiki`
-- 大宮店を追加した場合：`https://limebelleliftlaboareum26.github.io/belle-pages/?store=omiya`
-
-さらに店舗を追加する場合は、1店舗分の `"omiya": { ... }` をコピーして、その次にカンマで区切って追加します。一番外側の `{ }` の中に店舗を並べます。`enabled: false` の店舗や存在しない店舗名では、予約ボタンを表示しません。
-
-この設定で変わるのは文字とリンク・地図です。画像の中に印刷されている文字は変わりません。新店でも画像内の料金・内容が適切か確認してください。現時点の画像は全店共通です。
-
-## GitHubへ初めて登録する
-
-### 1. 保管場所を作る
-
-1. GitHubにログインし、右上の「＋」→「New repository」を押します。
-2. 「Owner」は管理するアカウントです。「Repository name」に `belle-pages` と入力します。
-3. 無料プランでPagesを使う場合は「Public」を選びます。公開されるHTML・画像・設定は、誰でも閲覧・ダウンロードできます。
-4. 「Add README」をOnにし、「Create repository」を押します。
-
-### 2. ファイルを登録する
-
-1. お渡ししたZIPを展開し、`belle-pages` フォルダを開きます。
-2. GitHubの保管場所の画面で「Add file」→「Upload files」を押します。
-3. `belle-pages` フォルダそのものではなく、**中身の `index.html`、`README.md`、`assets`、`config`、`docs` をまとめて**アップロード欄へドラッグします。
-4. フォルダの階層がそのまま登録されることを確かめ、「Commit changes」で保存します。既存READMEは今回の内容に置き換えます。
-5. 一番上の階層に `index.html` があることを確かめます。`belle-pages/index.html` のように余分なフォルダが入ると、公開ページを開けません。
-
-Macでは `.nojekyll` が隠れて見えないことがあります。Finderで `Command + Shift + .` を押すと表示できます。ほかのファイルと一緒に登録してください。登録できない場合は「Add file」→「Create new file」でファイル名を `.nojekyll`、内容を1行の空白にして保存できます。
-
-### 3. ページを公開する
-
-1. 保管場所の上部で「Settings」を押します。
-2. 左のメニューから「Pages」を押します。
-3. 「Build and deployment」の「Source」で「Deploy from a branch」を選びます。
-4. 「Branch」で `main`、その隣で `/(root)` を選び、「Save」を押します。
-5. 数分待って同じ画面を開き直します。「Your site is live at」に表示されたURLが公開先です。初回は10分ほどかかる場合があります。
-6. URLを開いて、画像・予約先・電話番号・地図を確認します。
-
-`https://〈Owner名〉.github.io/〈リポジトリ名〉/` が基本のURLです。GitHubのコード画面のURLとは異なります。Owner名を後で変更する場合、公開URLも変わるため、共有済みリンクやQRコードを更新してください。
-
-## 更新後の確認
-
-- スマホで横にはみ出していないか。
-- 画像が10枚すべて表示されているか。
-- 4か所の予約ボタンが正しい店舗の予約先へ進むか（予約を確定する必要はありません）。
-- 電話番号が正しいか。スマホで電話画面に正しい番号が渡るか（実際に発信する必要はありません）。
-- 地図に正しい店舗が表示されるか。
-- FAQ7項目を押して答えを開閉できるか。
-- 新店舗URLに `?store=店舗名` が付いているか。
-
-画像を差し替える場合は `assets/images/` の同じファイル名で置き換えると反映されます。今回は画像の加工や差し替えはしていません。
-
-## うまく表示されないとき
-
-- 404になる：Pagesの `main` / `/(root)` 設定と、一番上にある `index.html` を確認します。
-- 画像が出ない：`assets/images/` がフォルダごと登録されているか確認します。
-- 「公開されていません」と出る：URL末尾の店舗名と `enabled` の値を確認します。
-- 店舗情報の設定エラーが出る：引用符・カンマと、予約・地図・電話の入力を確認します。
-- 更新前の内容が出る：数分待って再読み込みします。Macでは `Command + Shift + R` も試せます。
-
-## 公式の操作案内
-
-- [リポジトリを作る](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-new-repository)
-- [ファイルを登録する](https://docs.github.com/en/repositories/working-with-files/managing-files/adding-a-file-to-a-repository)
-- [GitHub Pagesを始める](https://docs.github.com/en/pages/quickstart)
+[GitHub公式：共同編集者の招待](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/repository-access-and-collaboration/inviting-collaborators-to-a-personal-repository)

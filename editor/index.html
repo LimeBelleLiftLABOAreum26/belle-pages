@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow"><title>Belle｜店舗情報の入力</title>
+<link rel="stylesheet" href="./editor.css">
+<script src="../assets/js/store-utils.js" defer></script><script src="./editor.js" defer></script>
+</head>
+<body>
+<header><a class="brand" href="../">Belle</a><span>店舗情報の入力</span></header>
+<main>
+<p class="eyebrow">STORE INFORMATION</p>
+<h1 id="heading">店舗情報を変更する</h1>
+<p class="lead">入力するのは店舗の情報だけ。画像とデザインはそのまま使います。</p>
+<ol class="steps"><li><b>1</b> 情報を入力</li><li><b>2</b> 表示を確認</li><li><b>3</b> ファイルを登録</li></ol>
+<p id="load-status" role="status">店舗情報を読み込んでいます。</p>
+<noscript>この入力画面はJavaScriptを有効にしてご利用ください。</noscript>
+<form id="store-form" hidden>
+<section class="card"><h2>1. 店舗の情報</h2>
+<p class="hint">公開してよい店舗の連絡先を入力してください。すべての項目を入力します。</p>
+<label>店舗名<input name="name" required maxlength="100" autocomplete="organization" placeholder="Belle栄店"></label>
+<label>住所<textarea name="address" required rows="3" autocomplete="street-address" placeholder="住所を入力してください。建物名は改行できます。"></textarea></label>
+<label>アクセス<input name="access" required maxlength="300" placeholder="〇〇駅から徒歩〇分"></label>
+<div class="two"><label>営業時間<input name="hours" required maxlength="100" placeholder="10:00～20:00"></label><label>定休日<input name="closedDays" required maxlength="100" placeholder="毎週水曜日／不定休 など"></label></div>
+<label>電話番号<input name="phone" type="tel" required maxlength="30" autocomplete="tel" placeholder="店舗の電話番号"></label>
+</section>
+<section class="card"><h2>2. 予約先と地図</h2>
+<label>WEB予約のURL<input name="bookingUrl" type="url" required placeholder="https://…" autocomplete="url"></label>
+<label>予約ボタンに表示する文章<input name="bookingLabel" required maxlength="100" placeholder="栄店のWEB予約はこちら"></label>
+<label>Googleマップ<textarea name="mapEmbedUrl" required rows="4" placeholder="Googleマップの埋め込み用URL、またはコピーしたHTMLを貼り付けてください。"></textarea></label>
+<details><summary>地図のコピー方法を見る</summary><p>Googleマップで店舗を開き、「共有」→「地図を埋め込む」→「HTMLをコピー」。コピーしたものを上の欄にそのまま貼り付けてください。「リンクを送信」の短いURLは使いません。</p></details>
+<label>公開状態<select name="enabled"><option value="false">下書きのままにする</option><option value="true">この店舗のページを公開する</option></select></label>
+<p class="hint">選択しただけでは公開されません。最後にGitHubへの登録が必要です。</p>
+</section>
+<section class="card"><h2>3. 確認して保存</h2>
+<p>先に表示を確認し、住所・予約先・電話番号・地図が正しいことを確かめてください。</p>
+<p id="form-status" role="status" aria-live="polite"></p>
+<div class="actions"><button id="preview-button" type="submit">入力した内容を確認する</button><button id="download-button" type="button" disabled>保存用ファイルをダウンロード</button></div>
+<p class="hint">入力内容はこの画面を閉じると消えます。確認後にファイルを保存してください。</p>
+</section>
+</form>
+<section id="preview-panel" class="card" hidden><h2>入力内容のプレビュー</h2><p>まだ公開されていません。下の画面は今入力した内容です。</p><dl id="preview-summary"></dl><iframe id="preview-frame" title="入力した店舗ページのプレビュー"></iframe></section>
+<section id="upload-panel" class="card" hidden><h2>最後にGitHubへ登録する</h2>
+<p id="file-instruction"></p>
+<ol class="instructions"><li>下の「GitHubの登録画面を開く」を押します。</li><li>「Drag files here…」の枠に、今ダウンロードしたファイルをドラッグします。</li><li>下の「Commit changes」で保存します。確認画面が出たら、もう一度「Commit changes」を押します。</li><li>数分待って「店舗の公開ページを開く」で内容を確認します。</li></ol>
+<div class="actions"><a id="upload-link" class="button" target="_blank" rel="noopener noreferrer">GitHubの登録画面を開く</a><a id="public-link" class="secondary" target="_blank" rel="noopener noreferrer">店舗の公開ページを開く</a></div>
+<p class="hint">GitHubにログインし、この保管場所を編集する権限が必要です。404や編集できない表示が出た場合は、管理者にアクセス権を確認してもらってください。この入力画面を開いただけでは公開内容は変わりません。</p>
+</section>
+<footer>画像・デザイン・FAQは共通です。店舗情報だけを変更します。<br><a href="../docs/staff-guide.html">担当者向けの操作ガイド</a></footer>
+</main></body></html>
